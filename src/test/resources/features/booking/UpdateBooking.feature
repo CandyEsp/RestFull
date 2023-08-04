@@ -14,7 +14,7 @@ Característica: Actualizar una reserva online
 
 
   @UpdateBookingSinToken  @All
-  Escenario: Actualizar reserva con campos correctos en el Header, envío de token y valores obligatorios en el request body
+  Escenario: Actualizar reserva sin enviar el token
     Dado que se desea consultar la url "https://restful-booker.herokuapp.com/"
     Cuando se genera el token de autenticacion
     Y se requiere actualizar la reserva del id "1"
