@@ -33,7 +33,6 @@ pipeline {
             steps{
         			script {
         				try {
-        					    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE', message: 'Test Suite had a failure') {
                                  bat ("mvn test -Dcucumber.features='src/test/resources/features/' -Dcucumber.filter.tags=\'${ESCENARIO}\' -Dcucumber.plugin=junit:target/site/result.xml -Dcucumber.glue='steps'")
 	        			    }
                             catch (ex) {
@@ -42,8 +41,8 @@ pipeline {
                                  }
 	                         }
 	                    }
-                    }
-            }
+                  }
+
 
         stage ('Reporte') {
         	steps {
